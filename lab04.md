@@ -16,7 +16,6 @@ private:
 public:
     void setdata();
     void getdata();
-    float tsalinBodoh();
     float timeSum(float &);
     void showData();
     void update(employee &a);
@@ -73,7 +72,7 @@ void sortTime(employee a[])
 {
     for(int j=0; j < z; j++)
     {
-        for(k = 0; k < z-1; k++)
+        for(k = 0; k < z-i-1; k++)
         {
         //эхний ажилтны цалин дараагын ажилтны цалингаас бага гэдгийг шалгах
             if(gross[j] <= gross[k] )
