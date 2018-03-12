@@ -29,7 +29,8 @@ void head()
     cout << "2.tsalin bodoh" << "\n";
     cout << "3. ajillasan tsag nemeh " << "\n";
     cout << "4.hevleh"<< "\n";
-    cout << "5.Garah"<< "\n";
+    cout << "5.Sort"<< "\n";
+    cout << "6.Exit"<< "\n";
 }
 //объектынх аа гишүүн өгөгдөлрүү гараас утга оноохын тулд классын getData гэсэн функцад хандан онооно.
 void employee::getdata()
