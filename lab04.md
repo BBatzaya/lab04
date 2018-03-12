@@ -3,7 +3,7 @@
 #include<iomanip>
 #include<cstring>
 using namespace std;
-int h = 0, k = 0, z = 0, gross[10];//class-д ажилтны цалинг хадгалах гишүүн өгөлдөл зарлаагүй учир gross гэсэн глобал хүснэгт зарлалаа.
+int h = 0, k = 0;
 class employee{
     //private хандалтын түвшинтэй ажилтны 4н гишүүн өгөгдөл, 1 гишүүг функц зарлаж байна.
 private:
@@ -50,10 +50,8 @@ void employee::showData()
     //нэг класс дахь public түвшний гишүүн функцээр хандаж байгаа учир гишүүн өгөгдөлд шууд хандаж ажилтны албан тушаалыг шалгаж байна.
     if(0 == strcmp("zahiral", ajil))
         //захирал бол захирлыг цалин бодох private түвшний zahirliin гэсэн функц дуудаж ажлуулна.
-        gross[z] = zahirliin(time);
-    else gross[z] = 5000*time;
-    cout << setw(3) << number << setw(12) << name << setw(12) << ajil << setw(6) << time << setw(10) << gross[z] << "\n" ;
-    z++;
+        return zahirliin(time);
+    else return 5000*time;
 }
 //ажилтны ажилласан цагийг бодохын тулд классын гишүүн функцруу хандсанаар ажилласан цаг гэсэн гишүүн өгөгдөлрүү хандаж байна.
 float employee::timeSum(float &ax)
@@ -68,19 +66,16 @@ void employee::setdata()
     cout << setw(3) << number << setw(12) << name << setw(12) << ajil << setw(6) << time << setw(10) <<"\n" ;
 }
 //ажилтны цалингаар нь эрэмбэлэх функц
-void sortTime(employee a[])
+void sortTime(employee a[], int m)
 {
-    for(int j=0; j < z-1; j++)
+    for(int j=0; j < m-1; j++)
     {
-        for(k = 0; k < z-i-1; k++)
+        for(k = 0; k < m-i-1; k++)
         {
         //эхний ажилтны цалин дараагын ажилтны цалингаас бага гэдгийг шалгах
-            if(gross[k] < gross[k] )
+            if(a[k]showData < a[k+1]showData )
             {
                 a[k].update(a[k+1]);//үнэн бол байр солих функцрууу хандана
-                key = gross[k];
-                gross[k] = gross[k+1] ;
-                gross[k+1] = key;
             }
         }
         }
@@ -120,7 +115,7 @@ int main()
         }
         if(b == 2)
             for(i = 0, j = i;i < n; i++)
-                 a1[i].showData(); //ажилтны цалинг бодохын тулд объектоор нь showData гэсэн гишүүн функцад хандаж байна.
+                cout << ++j << " dugaartai ajiltnii tsalin: "<< a1[i].showData() << "\n"; //ажилтны цалинг бодохын тулд объектоор нь showData гэсэн гишүүн функцад хандаж байна.
         if(b == 3)
         {
             cout << "nemeh tsagaa oruulna uu? "; cin >> c;
@@ -137,8 +132,9 @@ int main()
                 a1[i].setdata();//гараас оруулсан мэдээллээ хэвлэхийн тулд объектоор нь setdata гэсэн гишүүн функцад хандаж байна.
         }
         if(b == 5)
-            sortTime(a1);//ажилтны цалингаар нь эрэмбэлэх функцад хандаж байна.
+            sortTime(a1, n);//ажилтны цалингаар нь эрэмбэлэх функцад хандаж байна.
     }
+    delete[100]a1;
 }
 
 
