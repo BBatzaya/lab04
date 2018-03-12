@@ -67,17 +67,20 @@ void employee::setdata()
 {
     cout << setw(3) << number << setw(12) << name << setw(12) << ajil << setw(6) << time << setw(10) <<"\n" ;
 }
-//ажилтны цагаар нь эрэмбэлэх функц
+//ажилтны цалингаар нь эрэмбэлэх функц
 void sortTime(employee a[])
 {
-    for(int j=0; j < z; j++)
+    for(int j=0; j < z-1; j++)
     {
         for(k = 0; k < z-i-1; k++)
         {
         //эхний ажилтны цалин дараагын ажилтны цалингаас бага гэдгийг шалгах
-            if(gross[j] <= gross[k] )
+            if(gross[k] < gross[k] )
             {
                 a[k].update(a[k+1]);//үнэн бол байр солих функцрууу хандана
+                key = gross[k];
+                gross[k] = gross[k+1] ;
+                gross[k+1] = key;
             }
         }
         }
